@@ -42,8 +42,8 @@ class Process(multiprocessing.Process):
 
 if __name__ == '__main__':
     
-    ping = pd.read_csv('/home/ankush_sharma_job_gmail_com/scripts/ping_metrics.csv', sep=';', header=None)
-    cpu = pd.read_csv('/home/ankush_sharma_job_gmail_com/scripts/cpu_metrics.csv', header=None)
+    ping = pd.read_csv('ping_metrics.csv', sep=';', header=None)
+    cpu = pd.read_csv('cpu_metrics.csv', header=None)
 
     # Filter ping metrics for the current node
     current_node = 'master-automation'
