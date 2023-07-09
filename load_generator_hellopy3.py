@@ -20,8 +20,8 @@ def run_script(script):
     return output.decode().strip()
 
 # Load ping and CPU metrics from CSV files
-ping = pd.read_csv('/home/ankush_sharma_job_gmail_com/scripts/ping_metrics.csv', sep=';', header=None)
-cpu = pd.read_csv('/home/ankush_sharma_job_gmail_com/scripts/cpu_metrics.csv', header=None)
+ping = pd.read_csv('ping_metrics.csv', sep=';', header=None)
+cpu = pd.read_csv('cpu_metrics.csv', header=None)
 
 # Filter ping metrics for the current node
 current_node = 'master-automation'
@@ -152,5 +152,5 @@ if __name__ == '__main__':
     print("Total execution time: {} seconds".format(total_time))
 
     # Run Kubernetes to remove the node label command
-    cmd3 = 'kubectl label node '+ node +' openwhisk-role-'
+    cmd3 = 'kubectl label node '+ best_node +' openwhisk-role-'
     os.system(cmd3)
