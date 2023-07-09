@@ -155,5 +155,8 @@ if __name__ == '__main__':
     print("Total execution time: {} seconds".format(total_time))
 
     # Run Kubernetes to remove the node label command
-    cmd3 = 'kubectl label node '+ node +' openwhisk-role-'
+    # cmd3 = 'kubectl label node '+ node +' openwhisk-role-'
+    cmd3 = 'kubectl label node '+ best_node +' openwhisk-role-'
+# 
+
     os.system(cmd3)
