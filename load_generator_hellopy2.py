@@ -30,6 +30,8 @@ class Process(Process):
 
     def run(self):
         global input_dict
+        os.system('sh cpu.sh')
+        os.system('sh ping_metrics.sh')
         start_time = time.perf_counter()
         ping = pd.read_csv('ping_metrics.csv', sep=';', header=None)
         cpu = pd.read_csv('cpu_metrics.csv', header=None)
